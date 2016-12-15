@@ -5,6 +5,11 @@ const concat = require('gulp-concat');
 const babel = require('gulp-babel');
 const sass = require('gulp-sass');
 
+var options = {
+  remoteUrl: "https://otteb.github.io/",
+  branch: "master"
+};
+
 const paths = {
   jsSource: ['./public/app/app.js', './public/app/**/*.js'],
   scssSource: './public/**/**/**/*.scss'
@@ -29,7 +34,7 @@ gulp.task('scss-bundle', () => {
 //pipes everything from the dist folder into ghPages to be deployed
 gulp.task('deploy', function(){
   return gulp.src('./public/app/dist/**/*')
-    .pipe(ghPages());
+    .pipe(ghPages(options));
 });
 
 gulp.task('watch', () => {
