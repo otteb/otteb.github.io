@@ -1,2 +1,2 @@
 # otteb.github.io
-Portfolio Sight
+Portfolio Site - home to all of Brian R. Otte's code 
