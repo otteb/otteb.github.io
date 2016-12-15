@@ -1,4 +1,6 @@
 const gulp = require('gulp');
+//handles employing gulp while being hosted on github
+const ghPages = require('gulp-gh-pages');
 const concat = require('gulp-concat');
 const babel = require('gulp-babel');
 const sass = require('gulp-sass');
@@ -22,6 +24,12 @@ gulp.task('scss-bundle', () => {
     .pipe(sass())
     .pipe(concat('styles.css'))
     .pipe(gulp.dest('./public/dist'))
+});
+
+//pipes everything from the dist folder into ghPages to be deployed
+gulp.task('deploy', function(){
+  return gulp.src('./public/app/dist/**/*')
+    .pipe(ghPages());
 });
 
 gulp.task('watch', ()=> {
