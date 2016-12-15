@@ -32,7 +32,7 @@ gulp.task('deploy', function(){
     .pipe(ghPages());
 });
 
-gulp.task('watch', ()=> {
+gulp.task('watch', () => {
   gulp.watch(paths.jsSource, ['js-bundle'])
   gulp.watch(paths.scssSource, ['scss-bundle'])
 });
